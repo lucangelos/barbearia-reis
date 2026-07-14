@@ -25,6 +25,13 @@
 *, *::before, *::after{ box-sizing: border-box; }
 html{ scroll-behavior: smooth; }
 
+html,
+body{
+    width:100%;
+    min-width:100%;
+    overflow-x:hidden;
+}
+
 body{
   margin: 0;
   background: var(--preto);
@@ -103,7 +110,7 @@ p:last-child{ margin-bottom: 0; }
   color: var(--dourado-claro);
   background: transparent;
   cursor: pointer;
-  transition: background 0.35s ease, color 0.35s ease, transform 0.25s ease;
+  transition: 0.35s ease, color 0.35s ease, transform 0.25s ease;
   white-space: nowrap;
 }
 .botao:hover{
@@ -286,6 +293,14 @@ nav.navegacao a.ativo{ color: var(--dourado-claro); }
    HERO
    ========================================================= */
 .hero{
+
+    width:100%;
+    min-height:100svh;
+    min-height:100dvh;
+
+}
+
+   .hero{
   min-height: 100vh;
   display:flex;
   align-items:center;
@@ -635,3 +650,272 @@ footer.rodape{
 /* reveal on scroll */
 .revelar{ opacity: 0; transform: translateY(24px); transition: opacity 0.8s ease, transform 0.8s ease; }
 .revelar.visivel{ opacity: 1; transform: translateY(0); }
+
+/* =========================================================
+   CELULARES (até 576px)
+========================================================= */
+@media (max-width:576px){
+
+  html{
+    font-size:16px;
+  }
+
+  .container{
+    padding:0 20px;
+  }
+
+  /* Topo */
+  .topo-info{
+    display:none;
+  }
+
+  header.cabecalho .container{
+    padding:12px 20px;
+  }
+
+  .logo-cabecalho{
+    height:55px;
+  }
+
+  /* Hero */
+
+  .hero{
+    min-height:100svh;
+    padding:120px 20px 70px;
+  }
+
+  .hero-logo{
+    width:95px;
+    margin-bottom:22px;
+  }
+
+  .hero-titulo{
+    font-size:2.3rem;
+    line-height:1.15;
+  }
+
+  .hero .subtitulo{
+    max-width:100%;
+    font-size:1rem;
+    margin-top:18px;
+  }
+
+  .hero .acoes{
+    width:100%;
+    flex-direction:column;
+    gap:14px;
+    margin-top:30px;
+  }
+
+  .hero .acoes .botao{
+    width:100%;
+    justify-content:center;
+  }
+
+  /* Menu */
+
+  nav.navegacao{
+
+    justify-content:center;
+
+  }
+
+  nav.navegacao ul{
+
+    gap:34px;
+
+  }
+
+  nav.navegacao a{
+
+    font-size:1.1rem;
+
+  }
+
+  .botao-menu{
+
+    width:46px;
+    height:46px;
+
+  }
+
+  /* Seções */
+
+  section{
+
+    padding:80px 0;
+
+  }
+
+  .cabecalho-secao{
+
+    margin-bottom:45px;
+
+  }
+
+  /* Valores */
+
+  .valor{
+
+    padding:0;
+
+  }
+
+  /* Serviços */
+
+  .servico{
+
+    padding:35px 28px;
+
+  }
+
+  /* Grid */
+
+  .duas-colunas{
+
+    gap:35px;
+
+  }
+
+  /* Footer */
+
+  .rodape-baixo{
+
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+
+  }
+
+}
+
+/* =========================================================
+   CELULARES PEQUENOS (420px)
+========================================================= */
+
+@media (max-width:420px){
+
+.container{
+
+padding:0 16px;
+
+}
+
+/* Header */
+
+.logo-cabecalho{
+
+height:46px;
+
+}
+
+.botao-menu{
+
+width:42px;
+height:42px;
+
+}
+
+/* Hero */
+
+.hero{
+
+padding:105px 16px 60px;
+
+}
+
+.hero-logo{
+
+width:78px;
+
+}
+
+.hero-titulo{
+
+font-size:2rem;
+
+}
+
+.hero .subtitulo{
+
+font-size:.95rem;
+
+}
+
+.hero .acoes{
+
+gap:12px;
+
+}
+
+.botao{
+
+padding:14px 20px;
+
+font-size:12px;
+
+letter-spacing:.15em;
+
+}
+
+/* Títulos */
+
+h2{
+
+font-size:1.8rem;
+
+}
+
+h3{
+
+font-size:1.2rem;
+
+}
+
+/* Cards */
+
+.servico{
+
+padding:28px 22px;
+
+}
+
+.cartao-barbeiro .info{
+
+padding:24px;
+
+}
+
+/* Timeline */
+
+.linha-tempo{
+
+grid-template-columns:60px 1fr;
+
+gap:18px;
+
+}
+
+.marco .ano{
+
+font-size:22px;
+
+}
+
+/* Contato */
+
+.lista-contato li{
+
+gap:12px;
+
+}
+
+/* Footer */
+
+.grade-rodape{
+
+gap:25px;
+
+}
+
+}
