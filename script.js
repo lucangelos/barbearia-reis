@@ -65,22 +65,4 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-// botao.addEventListener("click",()=>{
 
-//     menu.classList.toggle("aberta");
-
-//     botao.classList.toggle("ativo");
-
-// });
-
-// document.querySelectorAll(".navegacao a").forEach(link=>{
-
-// link.addEventListener("click",()=>{
-
-// menu.classList.remove("aberta");
-
-// botao.classList.remove("ativo");
-
-// });
-
-// });

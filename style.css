@@ -232,7 +232,7 @@ header.cabecalho .container{
 nav.navegacao{
 
 max-height:0;
-
+display: flex;
 overflow:hidden;
 
 opacity:0;
@@ -256,6 +256,7 @@ visibility:visible;
 nav.navegacao ul{
   list-style: none;
   display: flex;
+  align-items: center;
   gap: 40px;
   margin: 0;
   padding: 0;
@@ -284,9 +285,7 @@ nav.navegacao a.ativo::after{ transform: scaleX(1); transform-origin: left; }
 nav.navegacao a.ativo{ color: var(--dourado-claro); }
 
 .botao-menu{
-
-display:none;
-
+display:flex;
 width:46px;
 height:46px;
 
@@ -372,35 +371,19 @@ z-index:1001;
 
 nav.navegacao{
 
-position:fixed;
-
-top:84px;
-left:0;
-right:0;
-
-background:rgba(10,9,8,.97);
-
-backdrop-filter:blur(10px);
-
-border-top:1px solid var(--linha);
-
-overflow:hidden;
-
-max-height:0;
-
-opacity:0;
-
-visibility:hidden;
-
-transition:
-
-max-height .45s ease,
-
-opacity .35s ease,
-
-visibility .35s;
-
-z-index:999;
+  position:fixed;
+  top:84px;
+  left:0;
+  right:0;
+  background:rgba(10,9,8,.97);
+  backdrop-filter:blur(10px);
+  border-top:1px solid var(--linha);
+  overflow:hidden;
+  max-height:0;
+  opacity:0;
+  visibility:hidden;
+  transition: max-height .4s ease,opacity .35s easevisibility .35s;
+  z-index:999;
 
 }
 
@@ -408,7 +391,7 @@ z-index:999;
 
 nav.navegacao.aberta{
 
-max-height:500px;
+max-height:350px;
 
 opacity:1;
 
@@ -421,7 +404,7 @@ visibility:visible;
 nav.navegacao ul{
 
 display:flex;
-
+width: 100%;
 flex-direction:column;
 
 align-items:center;
@@ -488,7 +471,7 @@ nav.navegacao a{
 
 display:block;
 
-padding:18px 0;
+padding:22px;
 
 width:100%;
 
@@ -497,7 +480,7 @@ text-align:center;
 font-size:17px;
 
 letter-spacing:.2em;
-
+border-bottom:1px solid rgba(201,168,90,.15);
 }
 
 }
