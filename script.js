@@ -1,37 +1,86 @@
-// Barbearia Reis — interações leves
 document.addEventListener("DOMContentLoaded", function () {
-  var botaoMenu = document.querySelector(".botao-menu");
-  var nav = document.querySelector("nav.navegacao");
 
-  if (botaoMenu && nav) {
-    botaoMenu.addEventListener("click", function () {
-      nav.classList.toggle("aberta");
-    });
-    nav.querySelectorAll("a").forEach(function (link) {
-      link.addEventListener("click", function () {
-        nav.classList.remove("aberta");
-      });
-    });
-  }
+    const botaoMenu = document.querySelector(".botao-menu");
+    const nav = document.querySelector(".navegacao");
 
-  
+    if (botaoMenu && nav) {
 
-  // revelar elementos ao rolar a página
-  var elementos = document.querySelectorAll(".revelar");
-  if ("IntersectionObserver" in window && elementos.length) {
-    var observador = new IntersectionObserver(
-      function (entradas) {
-        entradas.forEach(function (entrada) {
-          if (entrada.isIntersecting) {
-            entrada.target.classList.add("visivel");
-            observador.unobserve(entrada.target);
-          }
-        });
-      },
-      { threshold: 0.15 }
-    );
-    elementos.forEach(function (el) { observador.observe(el); });
-  } else {
-    elementos.forEach(function (el) { el.classList.add("visivel"); });
-  }
+        botaoMenu.addEventListener("click", function () {
+
+    nav.classList.toggle("aberta");
+    botaoMenu.classList.toggle("ativo");
+
+    const aberto = nav.classList.contains("aberta");
+    botaoMenu.setAttribute("aria-expanded", aberto);
+
 });
+
+        nav.querySelectorAll("a").forEach(function (link) {
+
+            link.addEventListener("click", function () {
+
+    nav.classList.remove("aberta");
+    botaoMenu.classList.remove("ativo");
+    botaoMenu.setAttribute("aria-expanded", "false");
+
+});
+
+        });
+
+    }
+
+    /* Reveal */
+
+    const elementos = document.querySelectorAll(".revelar");
+
+    if ("IntersectionObserver" in window && elementos.length) {
+
+        const observador = new IntersectionObserver(function (entradas) {
+
+            entradas.forEach(function (entrada) {
+
+                if (entrada.isIntersecting) {
+
+                    entrada.target.classList.add("visivel");
+                    observador.unobserve(entrada.target);
+
+                }
+
+            });
+
+        }, {
+
+            threshold: .15
+
+        });
+
+        elementos.forEach(el => observador.observe(el));
+
+    } else {
+
+        elementos.forEach(el => el.classList.add("visivel"));
+
+    }
+
+});
+
+
+// botao.addEventListener("click",()=>{
+
+//     menu.classList.toggle("aberta");
+
+//     botao.classList.toggle("ativo");
+
+// });
+
+// document.querySelectorAll(".navegacao a").forEach(link=>{
+
+// link.addEventListener("click",()=>{
+
+// menu.classList.remove("aberta");
+
+// botao.classList.remove("ativo");
+
+// });
+
+// });
